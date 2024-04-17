@@ -98,4 +98,27 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-2
 
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+    Jawab:
+
+    Meskipun dalam pola Model-View-Controller (MVC) Model mencakup penyimpanan data dan logika bisnis, terpisahnya "Service" dan "Repository" dari Model tetap diperlukan untuk memisahkan tanggung jawab dan meningkatkan kohesi dan fleksibilitas sistem. Pemisahan tanggung jawab ini memungkinkan untuk lebih mudah mengelola dan mengubah setiap bagian dari sistem secara independen. "Service" bertanggung jawab untuk menangani logika bisnis, mengelola interaksi antara berbagai model, dan menjalankan operasi yang kompleks atau terkait dengan bisnis, sementara "Repository" bertanggung jawab untuk mengakses dan memanipulasi data secara langsung dari penyimpanan. Dengan memisahkan "Service" dan "Repository" dari Model, kita dapat mencapai prinsip Single Responsibility Principle (SRP) yang mendorong setiap komponen untuk memiliki satu dan hanya satu alasan untuk berubah.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+    Jawab:
+
+    Jika kita hanya menggunakan Model tanpa "Service" dan "Repository", kompleksitas kode akan meningkat karena semua logika bisnis dan operasi data akan ditempatkan di dalam Model itu sendiri. Hal ini dapat menyebabkan Model menjadi terlalu besar dan sulit untuk dipelihara dan diuji. Interaksi antara setiap model juga akan menjadi lebih kompleks karena semua logika bisnis dan akses data akan dikelola di dalam setiap model, menyebabkan redundansi dan potensial terjadinya cacat dalam desain.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+    Jawab:
+
+    Postman adalah alat untuk menguji dan memvalidasi API yang dibangun dalam proyek. Dengan Postman, Kita dapat dengan mudah membuat dan mengirimkan permintaan HTTP ke endpoint API dan memeriksa respons yang diterima. Fitur-fitur yang berguna dalam Postman termasuk:
+    - Collections: Untuk mengatur permintaan HTTP ke dalam kelompok yang terkait, memudahkan pengujian dan dokumentasi.
+    - Environment Variables: Untuk menyimpan variabel yang dapat digunakan di seluruh permintaan, memudahkan pengujian dengan berbagai lingkungan (seperti pengembangan, produksi, dll.).
+    - Tests: Untuk menulis skrip tes dalam JavaScript untuk memeriksa respons yang diterima, memvalidasi data, dan mengambil tindakan berdasarkan hasil tes.
+    Monitoring: Untuk memantau kesehatan API Anda dengan memantau kinerja dan latensi permintaan.
+    - Documentation: Untuk membuat dokumentasi API yang lengkap dan mudah dimengerti.
+
 #### Reflection Publisher-3
