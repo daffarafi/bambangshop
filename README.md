@@ -122,3 +122,25 @@ This is the place for you to write reflections:
     - Documentation: Untuk membuat dokumentasi API yang lengkap dan mudah dimengerti.
 
 #### Reflection Publisher-3
+
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+    Jawab:
+
+    Dalam tutorial ini, kita menggunakan varian model Push dari Observer Pattern. Hal ini terlihat dari cara publisher (dalam hal ini, BambangShop) secara aktif mengirimkan data notifikasi kepada para subscriber tanpa menunggu permintaan dari subscriber.
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+    Jawab:
+
+    Jika kita menggunakan varian Pull dari Observer Pattern, artinya subscriber akan secara aktif meminta atau menarik data notifikasi dari publisher saat diperlukan, misalnya dengan melakukan polling secara periodik. 
+
+    Keuntungannya adalah kita dapat amengurangi overhead pengiriman notifikasi kepada subscriber yang mungkin tidak membutuhkan data tersebut. Dalam varian Push, publisher harus mengirim notifikasi ke semua subscriber, bahkan jika sebagian besar dari mereka tidak tertarik atau tidak memerlukan data tersebut. Kita juga dapat Memungkinkan subscriber untuk mengontrol kapan dan berapa sering mereka ingin menerima data notifikasi, sehingga dapat meningkatkan efisiensi penggunaan sumber daya.
+
+    Kerugiannya adalah kita memerlukan polling terus-menerus dari subscriber, yang dapat meningkatkan beban kerja dan konsumsi sumber daya, terutama dalam kasus di mana tidak ada perubahan atau pembaruan yang signifikan pada data notifikasi. Selain itu, Kompleksitas kode dapat meningkat karena perlu menangani logika polling dan sinkronisasi antara publisher dan subscriber.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+    Jawab:
+
+    Jika kita memutuskan untuk tidak menggunakan multi-threading dalam proses notifikasi, maka program akan menjadi tidak responsif atau terblokir saat melakukan operasi notifikasi kepada banyak subscriber. Tanpa multi-threading, setiap notifikasi akan diproses secara serial, yang dapat mengakibatkan penundaan yang signifikan terutama jika ada banyak subscriber atau jika operasi notifikasi membutuhkan waktu yang lama (misalnya, mengirim email). Dengan menggunakan multi-threading, kita dapat memproses notifikasi secara paralel, meningkatkan responsivitas dan kinerja keseluruhan program.
